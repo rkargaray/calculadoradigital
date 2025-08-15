@@ -1,0 +1,186 @@
+:root {
+    --background-color: #0a0a0a;
+    --text-color: #e0e0e0;
+    --primary-glow: rgba(180, 220, 255, 0.1);
+    --secondary-glow: rgba(255, 255, 255, 0.05);
+    --border-color: rgba(255, 255, 255, 0.2);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(ellipse at top right, var(--primary-glow) 0%, transparent 50%),
+                radial-gradient(ellipse at bottom left, var(--secondary-glow) 0%, transparent 40%);
+    z-index: -1;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 1.5rem;
+    width: 100%;
+}
+
+.header-content h1 {
+    font-size: 3rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+}
+
+.header-content p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+.header-buttons .btn {
+    margin: 0 0.5rem;
+    padding: 0.8rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.btn-primary {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+.btn-primary:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border-color: var(--border-color);
+}
+
+.btn-secondary:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1.5rem;
+}
+
+.calculator {
+    width: 100%;
+    max-width: 360px;
+    background-color: rgba(18, 18, 18, 0.6);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+.display {
+    background-color: transparent;
+    color: var(--text-color);
+    font-size: 2.8rem;
+    text-align: right;
+    padding: 2.5rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
+    border: none;
+    font-weight: 300;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn-calc {
+    background-color: rgba(255, 255, 255, 0.05);
+    border: none;
+    color: var(--text-color);
+    font-size: 1.4rem;
+    padding: 1.5rem 0;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-calc:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.btn-calc:active {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.operator {
+    color: #87ceeb; /* Sky blue for operators */
+}
+
+.equals {
+    background-color: #87ceeb;
+    color: var(--background-color);
+}
+
+.equals:hover {
+    background-color: #98d7f0;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    padding: 1.5rem;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .header-content h1 {
+        font-size: 2.2rem;
+    }
+
+    .header-content p {
+        font-size: 1rem;
+    }
+
+    .header-buttons {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .btn-calc {
+        padding: 1.2rem 0;
+        font-size: 1.2rem;
+    }
+}

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Digital</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="background-overlay"></div>
+
+    <header>
+        <div class="header-content">
+            <h1>Calculadora Digital</h1>
+            <p>Realiza tus cálculos de forma rápida, sencilla y con estilo.</p>
+            <div class="header-buttons">
+                <button class="btn btn-primary">Abrir App ➤</button>
+                <button class="btn btn-secondary">Descubrir Más</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator">
+            <div class="display" id="display">0</div>
+            <div class="buttons">
+                <button class="btn-calc operator" onclick="clearDisplay()">AC</button>
+                <button class="btn-calc operator" onclick="appendOperator('(')">(</button>
+                <button class="btn-calc operator" onclick="appendOperator(')')">)</button>
+                <button class="btn-calc operator" onclick="appendOperator('/')">÷</button>
+
+                <button class="btn-calc" onclick="appendNumber('7')">7</button>
+                <button class="btn-calc" onclick="appendNumber('8')">8</button>
+                <button class="btn-calc" onclick="appendNumber('9')">9</button>
+                <button class="btn-calc operator" onclick="appendOperator('*')">×</button>
+
+                <button class="btn-calc" onclick="appendNumber('4')">4</button>
+                <button class="btn-calc" onclick="appendNumber('5')">5</button>
+                <button class="btn-calc" onclick="appendNumber('6')">6</button>
+                <button class="btn-calc operator" onclick="appendOperator('-')">−</button>
+
+                <button class="btn-calc" onclick="appendNumber('1')">1</button>
+                <button class="btn-calc" onclick="appendNumber('2')">2</button>
+                <button class="btn-calc" onclick="appendNumber('3')">3</button>
+                <button class="btn-calc operator" onclick="appendOperator('+')">+</button>
+
+                <button class="btn-calc" onclick="appendNumber('0')">0</button>
+                <button class="btn-calc" onclick="appendOperator('.')">.</button>
+                <button class="btn-calc" onclick="deleteLast()">⌫</button>
+                <button class="btn-calc equals" onclick="calculateResult()">=</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>© 2025 kar. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
